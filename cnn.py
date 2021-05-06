@@ -176,13 +176,15 @@ data_transforms = {
         transforms.RandomResizedCrop(input_size, scale=(0.5, 1.0)),
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
-        transforms.Normalize(mean, std)
+        #transforms.Normalize(mean, std)
+        transforms.Normalize((0.5), (0.5))
     ]),
     'val': transforms.Compose([
         transforms.Resize(input_size),
         transforms.CenterCrop(input_size),
         transforms.ToTensor(),
-        transforms.Normalize(mean, std)
+        #transforms.Normalize(mean, std)
+        transforms.Normalize((0.5), (0.5))
     ])
 }
 
