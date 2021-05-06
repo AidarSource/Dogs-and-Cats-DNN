@@ -31,7 +31,7 @@ test_dir = './TESTbounding-box'
 # -------------------
 # Global declarations
 # -------------------
-input_size = 224
+input_size = 47
 mean = [0.485, 0.456, 0.406]
 std = [0.229, 0.224, 0.225]
 
@@ -173,14 +173,14 @@ class DogVsCatDataset(Dataset):
 # Data loaders
 data_transforms = {
     'train': transforms.Compose([
-        #transforms.RandomResizedCrop(input_size, scale=(0.5, 1.0)),
+        transforms.RandomResizedCrop(input_size, scale=(0.5, 1.0)),
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
         #transforms.Normalize(mean, std)
         transforms.Normalize((0.5), (0.5))
     ]),
     'val': transforms.Compose([
-        #transforms.Resize((input_size),
+        transforms.Resize(input_size),
         transforms.CenterCrop(input_size),
         transforms.ToTensor(),
         #transforms.Normalize(mean, std)
