@@ -5,9 +5,9 @@ import os
 cat_counter = 0
 dog_counter = 0
 directory = 'train/'
-cropped = 'bounding-box/'
+cropped = 'TRAINbounding-box/'
 try:
-    os.makedirs('bounding-box')
+    os.makedirs('TRAINbounding-box')
 except Exception as e:
     print('Folder for bounding boxes already created.')
 
