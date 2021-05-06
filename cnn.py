@@ -180,7 +180,7 @@ data_transforms = {
         transforms.Normalize((0.5), (0.5))
     ]),
     'val': transforms.Compose([
-        transforms.Resize(input_size),
+        transforms.Resize(3, 47, 47),
         transforms.CenterCrop(input_size),
         transforms.ToTensor(),
         #transforms.Normalize(mean, std)
