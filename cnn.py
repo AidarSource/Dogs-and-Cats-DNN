@@ -173,7 +173,7 @@ class DogVsCatDataset(Dataset):
 # Data loaders
 data_transforms = {
     'train': transforms.Compose([
-        transforms.RandomResizedCrop(input_size, scale=(0.5, 1.0)),
+        #transforms.RandomResizedCrop(input_size, scale=(0.5, 1.0)),
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
         #transforms.Normalize(mean, std)
@@ -181,7 +181,6 @@ data_transforms = {
     ]),
     'val': transforms.Compose([
         #transforms.Resize((input_size),
-        transforms.Resize((input_size, input_size)),
         transforms.CenterCrop(input_size),
         transforms.ToTensor(),
         #transforms.Normalize(mean, std)
